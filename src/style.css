@@ -3,117 +3,61 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-.containerGeneral{
-  width: 100%;
-  flex-direction: column;
+body{
+    background-image: url(images/gimnastaa2.jpeg);
+    position: fixed;
+    justify-content: center;
+    background-size: 1500px 690px;
+    height: 300px;
+    width: 100%;
 }
 
 .container {
     width: 100%;
-    max-width: 950px;
-    display: flex;
- }
-
-.header1 {
-    background-color: #aef736;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.articlesInitial{
-
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 28px;
-    
-  }
-  
-  
-  .imageRio {
-      margin-top: 15px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-  }
-
- .boxButtonInitial{
-    display: flex;
-    justify-content: center;
-    
-  }
-  
-  button {
-    display: flex;
-    background: #f18815;
-    font-size: 20px;
-    color: black;
-    border-radius: 50px;
-    padding: 10px 50px;
-    border: none;
-    margin-top: 15px;
-    text-decoration: none;
-  }
-
-  
-  footer {
-    margin-top: 15px;
-    background-color: #aef736;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .container {
-    width: 100%;
-    max-width: 950px;
+    /* max-width: 950px; */
     display: flex;
     justify-content: center;
 }
 
-  header {
-    background-color: #aef736;
+header {
+    background-color: #46074d;
     height: 50px;
     display: flex;
-    justify-content:center;
-}
-
-.header {
     justify-content: space-between;
 }
 
-
-header img {
-    max-width: 50px;
-    height: auto;
-    display: inline-block;
-
+.header,h1 {
+    color: #faf1e5;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .search-container {
-    margin-top: 35px;
+    margin-top: 22px;
     width: 100%;
-    height: 40px;
     display: flex;
     justify-content: center;
+
 }
 
 .search-input {
-    background-color: #ffd6a6;
-    padding: 5px 3px;
-    border: 3px #000 solid;
-    border-radius: 5px;
-    width: 300px;
+    background-color: white;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    padding: 4px 2px;
+    border: 1px #000 solid;
+    border-radius: 8px;
+    width: 270px;
+    margin-left: 10cm;
 }
 
 .search-button {
-    margin-left: 5px;
+    margin-left: 2px;
     background: none;
     border: none;
     cursor: pointer;
@@ -125,22 +69,137 @@ header img {
 }
 
 .filter-container {
-    margin-top: 35px;
+    /* margin-top: 15px;
+    margin-bottom: 15px; */
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    margin-left: 9cm;
+
 }
 
-.filter, .filter-button {
-    background-color: #f18815;
+.filter {
+    background-color: #bbd0ff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
     padding: 3px 5px;
     border: none;
-    border-radius: 3px;
+    border-radius: 8px;
     width: 100%;
-    max-width: 90px;
-    height: 30px;
+    max-width: 100px;
 }
 
-.filters{
+.filter-button {
+    background-color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    padding: 3px 5px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100px;
+}
+
+.filters {
     justify-content: space-between;
-
 }
+
+
+.athlete-container {
+border-radius: 10px;
+   border: 2px solid;
+   margin-left: 10cm;
+   width: 900px;
+   height: 450px;
+   overflow: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.athlete {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 12px;
+    background-color: #bbd0ff;
+    border-radius: 10px;
+    padding: 15px;
+    padding-left: 15px;
+    width: 220px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.athlete img {
+    width: 80%;
+    max-width: 50px;
+}
+
+a{
+    padding: 12px;
+    background-color: #bbd0ff;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    position:absolute;
+    top: 13cm;
+    left: 19cm;
+  }
+  
+  a:hover{
+    font-size: 22px;
+    transition-delay: 0.05s;
+  }
+  #presentacion{
+    border-radius: 15px;
+    margin-left: 10em;
+    width: 480px;
+    height: 270px;
+    margin-left: 32em;
+    margin-top: 8em;
+    }
+
+    #arosolimpicos{
+max-width: 100px;
+    position: absolute;
+    top:0cm;
+    left:31cm;
+
+    }
+
+#lBlanco{
+    width: 120px;
+    position: absolute;
+    top:0.2cm;
+    right: 31cm;
+    }
+
+#volver{
+    padding: 7px;
+    background-color: #bbd0ff;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    position:absolute;
+    top: 16cm;
+    left: 4cm;
+}
+#volver :hover{
+    font-size: 20px;
+    transition-delay: 0.05s;
+  }

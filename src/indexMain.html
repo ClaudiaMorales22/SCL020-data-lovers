@@ -8,89 +8,72 @@
 </head>
 
 <body>
-  <div id="root"></div>
-
-  <header>
-    <div class="header container" >
-      <img src="images/LogoRio2.jpeg" alt="Logo Río">
-      <h1>Medallistas Olímpicos Río 2016</h1>
-      <img src="images/Mascota.png" alt="Mascota Río 2016">
+<header>
+    <div class="header container">
+      <img id="lBlanco" src="images/Logoblanco.png" alt="">
+      <h1>Medallistas Femeninas</h1>
+      <img id="arosolimpicos" src="images/58595cd74f6ae202fedf284d.png" alt="">
     </div>
   </header>
 
   <main>
 
+
     <div class="search-container">
-    <div class="container">
-      <input type="text" class="search-input" placeholder="Buscar">
-      <button type="button" class="search-button">
-        <img src="images/lupa.png" alt="Ícono lupa">
-      </button>
+      <div class="container">
+        <input type="text" class="search-input" placeholder="Buscar">
+        <button type="button" class="search-button">
+          <img src="images/Lupa.png" alt="Ícono lupa">
+        </button>
+      </div>
     </div>
-  </div>
-  
-  <div class="filter-container">
 
-    <div class="container filters">
 
-         <select class="filter">
-        <option value="" selected disabled>Ordenar</option>
-      </select>
+    <div class="filter-container">
+
+      <div class="container filters">
+
+      
+        <select class="filter">
+          <option value="" selected disabled>Ordenar</option>
+          <option value="1">A-Z</option>
+          <option value="2">Z-A</option>
+        </select>
+      
+
+        <select id="team" class="filter" name="team">
+          <option value="All">Team</option>
+          </select>
 
         <select class="filter">
-        <option value="" selected disabled>Género</option>
-      </select>
+          <option value="" selected disabled>Medallas</option>
+        </select>
 
+   
         <select class="filter">
-        <option value="" selected disabled>País</option>
-      </select>
+          <option value="" selected disabled>Deporte</option>
+        </select>
 
-        <select class="filter">
-        <option value="" selected disabled>Medallas</option>
-      </select>
-
-        <select class="filter">
-        <option value="" selected disabled>Deporte</option>
-      </select>
-
+    
         <button type="button" class="filter-button">Limpiar</button>
-    </div>
+      </div>
 
-  </div>
+    </div>
 
     <div class="athlete-container">
 
-      <div class="athlete">
-      <img src="images/atleta-mujer.jpg" alt="">
-      <ul>
-        <li>Nombre: Naomi Osaka</li>
-        <li>País: Japón</li>
-        <li>Deporte: Tenis</li>
-        <li>Medalla: Oro</li>
-      </ul>
+      <div class="container" id="allAthletes">
+
+        
+      </div>
     </div>
-
-      <div class="athlete">
-      <img src="images/atleta-mujer.jpg" alt="">
-      <ul>
-        <li>Nombre: Naomi Osaka</li>
-        <li>País: Japón</li>
-        <li>Deporte: Tenis</li>
-        <li>Medalla: Oro</li>
-      </ul>
-    </div>
-
-
-  </div>
-
 
 
   </main>
+  <a id="volver" href="index.html"><strong>VOLVER</strong></a>
+  <footer></footer>
 
-
-<footer></footer>
-
-<script src="main.js" type="module"></script>
+  <script src="main.js" type="module"></script>
 </body>
 
 </html>
