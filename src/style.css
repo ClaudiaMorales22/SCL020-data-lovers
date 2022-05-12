@@ -52,7 +52,7 @@ header {
     padding: 4px 2px;
     border: 1px #000 solid;
     border-radius: 8px;
-    width: 270px;
+    width: 400px;
     margin-left: 10cm;
 }
 
@@ -89,7 +89,8 @@ header {
     border: none;
     border-radius: 8px;
     width: 100%;
-    max-width: 100px;
+    max-width: 120px;
+    text-align: center;
 }
 
 .filter-button {
@@ -109,7 +110,7 @@ header {
 
 
 .athlete-container {
-border-radius: 10px;
+    border-radius: 10px;
    border: 2px solid;
    margin-left: 10cm;
    width: 900px;
@@ -173,7 +174,7 @@ a{
     }
 
     #arosolimpicos{
-max-width: 100px;
+    max-width: 100px;
     position: absolute;
     top:0cm;
     left:31cm;
