@@ -5,8 +5,5 @@ export const getFemaleAthletes = (data) => {
 };
 
 
-export const femaleteam = (femaleathletes, valor) => {
-  const femaleTeam = femaleathletes.filter(person => (person.team === valor || valor === 'All'));
-  return femaleTeam ;
-};
+
 

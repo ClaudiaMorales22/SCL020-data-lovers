@@ -21,7 +21,7 @@
 
     <div class="search-container">
       <div class="container">
-        <input type="text" class="search-input" placeholder="Buscar">
+        <input type="text" id="searchBar" class="search-input" placeholder="Buscar">
         <button type="button" class="search-button">
           <img src="images/Lupa.png" alt="Ícono lupa">
         </button>
@@ -33,25 +33,38 @@
 
       <div class="container filters">
 
-      
-        <select class="filter">
+      <div>
+        <select id="sort" class="filter">
           <option value="" selected disabled>Ordenar</option>
-          <option value="1">A-Z</option>
-          <option value="2">Z-A</option>
+          <option value="A-Z">A-Z</option>
+          <option value="Z-A">Z-A</option>
         </select>
-      
+      </div>
 
         <select id="team" class="filter" name="team">
-          <option value="All">Team</option>
-          </select>
-
-        <select class="filter">
-          <option value="" selected disabled>Medallas</option>
+          <option value="" selected disabled>País</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Chile">Chile</option>
+          <option value="Venezuela">Venezuela</option>
+          <option value="Brasil">Brasil</option>
+          <option value="Peru">Perú</option>
         </select>
 
+        <select id="medals" class="filter">
+          <option value="" selected disabled>Medallas</option>
+          <option value="Gold">Oro</option>
+          <option value="Silver">Plata</option>
+          <option value="Bronze">Bronce</option>
+        </select>
+       
    
-        <select class="filter">
+        <select id="sport" class="filter">
           <option value="" selected disabled>Deporte</option>
+          <option value="Volleyball">Volleyball</option>
+          <option value="">2</option>
+          <option value="">2</option>
+          <option value="">3</option>
+          <option value="">4</option>
         </select>
 
     
