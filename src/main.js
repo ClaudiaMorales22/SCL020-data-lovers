@@ -1,27 +1,26 @@
 import data from "./data/athletes/athletes.js";
 import { getFemaleAthletes } from "./data.js";
 
-
+let total = document.querySelector(".filter-button");
 const athletes = data.athletes;
 
 const femaleathletes = athletes.filter((person) => person.gender === "F");
-//const maleathletes = athletes.filter((person) => person.gender === "M");
+
 const femaleathletesContainer = document.querySelector("#allAthletes");
+total.textContent = femaleathletes.length;
 
 document.addEventListener("DOMContentLoaded", () => {
-  //const femaleathletesContainer = document.querySelector("#allAthletes");
+  
   for (let i = 0; i < femaleathletes.length; i++) {
     const athleteCard = document.createElement("div");
     athleteCard.className = "athlete";
     athleteCard.innerHTML += `
               <img src="${"images/Niña.jpeg"}" alt="">
-              <ul>
                   <p>Nombre: ${femaleathletes[i].name}</p>
                   <p>País: ${femaleathletes[i].team}</p>
                   <p>Deporte: ${femaleathletes[i].sport}</p>
                   <p>Medalla: ${femaleathletes[i].medal}</p>
-              </ul>
-          `;
+              `;
     femaleathletesContainer.appendChild(athleteCard);
   }
 });
@@ -36,23 +35,24 @@ searchBar.addEventListener("keyup", (event) => {
     return atleta.name.toLowerCase().includes(textoBuscado);
   });
 renderAthlete(matchedAthletes);
+total.textContent = matchedAthletes.length;
 });
-
-
 
 // *** Ordenar ***
 
 
 const ordenar = document.querySelector("#sort");
-console.log(ordenar);
 ordenar.addEventListener("change", (e) => {
   let ordenados = [];
-
+  
   if (e.target.value === "A-Z") {
-    ordenados = femaleathletes.sort((a, b) => a.name.localeCompare(b.name));
+    ordenados = ordenadaAZ;
     renderAthlete(ordenados);
+    console.log(ordenados.length);
+    total.textContent = ordenados.length;
   } else if (e.target.value === "Z-A") {
     ordenados = femaleathletes.sort((a, b) => b.name.localeCompare(a.name));
+    total.textContent = ordenados.length;
     renderAthlete(ordenados);
   }
 });
@@ -66,14 +66,17 @@ medals.addEventListener("change", (e) => {
 
   if (e.target.value === "Gold") {
     premiados = femaleathletes.filter((atleta) => atleta.medal === "Gold");
+    total.textContent = premiados.length;
     renderAthlete(premiados);
     
   } else if (e.target.value === "Silver") {
     premiados = femaleathletes.filter((atleta) => atleta.medal === "Silver");
+    total.textContent = premiados.length;
     renderAthlete(premiados);
 
   } else if (e.target.value === "Bronze") {
     premiados = femaleathletes.filter((atleta) => atleta.medal === "Bronze");
+    total.textContent = premiados.length;
     renderAthlete(premiados);
   }
 });
@@ -83,6 +86,7 @@ medals.addEventListener("change", (e) => {
 const team = document.querySelector("#team");
 team.addEventListener("change", (e) => {
   let equipo = femaleathletes.filter((atleta) => atleta.team === "Argentina");
+  total.textContent = equipo.length;
   renderAthlete(equipo);
 
 });
@@ -92,29 +96,10 @@ team.addEventListener("change", (e) => {
 const sport = document.querySelector("#sport");
 sport.addEventListener("change", (e) => {
   let deporte = femaleathletes.filter((atleta) => atleta.sport === "Volleyball");
+  total.textContent = deporte.length;
   renderAthlete(deporte);
 });
 
-
-
-
-//   if (e.target.value === "A-Z") {
-//     ordenados = femaleathletes.sort((a, b) =>
-//       a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1
-//     );
-//     renderAthlete(ordenados);
-//   } else if (e.target.value === "Z-A") {
-//     ordenados = femaleathletes.sort((a, b) => {
-//       if (a.name.toLowerCase() < b.name.toLowerCase()) {
-//         return 1;
-//       } else {
-//         return -1;
-//       }
-//     });
-//     renderAthlete(ordenados);
-//   }
-
-// ;
 
 
 function renderAthlete(atletas) {
@@ -125,13 +110,46 @@ function renderAthlete(atletas) {
     athleteCard.className = "athlete";
     athleteCard.innerHTML += `
               <img src="${"images/Niña.jpeg"}" alt="">
-              <ul>
+              
                   <p>Nombre: ${atleta.name}</p>
                   <p>País: ${atleta.team}</p>
                   <p>Deporte: ${atleta.sport}</p>
                   <p>Medalla: ${atleta.medal}</p>
-              </ul>
+              
           `;
     containerAthletes.appendChild(athleteCard);
   });
 }
+
+
+
+//select
+
+//team de atletas mujeres
+const teamAthletes = femaleathletes.map(({team})=>team);
+//console.log(teamAthletes);
+
+//elimina teams repetidos
+const ultimateTeam = teamAthletes.filter((item,index)=>{
+  return teamAthletes.indexOf(item) === index;
+  })
+  //console.log(ultimateTeam);
+
+  //ordenar team
+  let sortTeam = ultimateTeam.sort();
+
+  //agregar teams al select
+
+ function loadTeam() {
+  let team = ultimateTeam; //Tu array de teams
+  let select = document.getElementById("team"); //Seleccionamos el select
+  
+  for(var i=0; i < team.length; i++){ 
+      let option = document.createElement("option"); //Creamos la opcion
+      option.innerHTML = team[i]; //Metemos el texto en la opción
+      select.appendChild(option); //Metemos la opción en el select
+  }
+}
+loadTeam();
+
+//mostrar data filtrada por team
