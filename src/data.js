@@ -29,12 +29,12 @@ export const filtroMedallas = (femaleathletes, e) => {
   return premiados
 }
 
-export const filtroTeam = (femaleathletes, e) => {
-  return femaleathletes.filter((atleta) => atleta.team === e.target.value);
+export const filtroTeam = (femaleathletes, teamName) => {
+  return femaleathletes.filter((atleta) => atleta.team === teamName);
 }
 
-export const filtroDeporte = (femaleathletes, e) => {
-  return femaleathletes.filter((atleta) => atleta.sport === e.target.value);
+export const filtroDeporte = (femaleathletes, sportName) => {
+  return femaleathletes.filter((atleta) => atleta.sport === sportName);
 }
 
 

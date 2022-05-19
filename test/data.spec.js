@@ -1,4 +1,4 @@
-import{ordenadosAZ, ordenadosZA} from '../src/data.js';
+import{ordenadosAZ, ordenadosZA, filtroTeam, filtroDeporte} from '../src/data.js';
 
 const data = [
   {
@@ -102,3 +102,29 @@ describe('Funcion ordenadosZA ordena alfabéticamente desde la Z a la A', () => 
 
   });
 });
+
+describe('Funcion filtroTeam filtra las atletas de acuerdo al país seleccionado', () => {
+  it('is a function', () => {
+    expect(typeof filtroTeam).toBe('function');
+  });
+
+  it('Debería retornar las atletas del país seleccionado', () => {
+    let athletasTeam = filtroTeam (data, "Netherlands");
+        expect(athletasTeam[0].name).toBe('Chantal Achterberg');
+   });
+});
+
+describe('Funcion filtroDeporte filtra las atletas de acuerdo al Deporte seleccionado', () => {
+  it('is a function', () => {
+    expect(typeof filtroDeporte).toBe('function');
+  });
+
+  it('Debería retornar las atletas del país seleccionado', () => {
+    let athletasSport = filtroDeporte (data, "Taekwondo");
+        expect(athletasSport[0].name).toBe('Patimat Abakarova');
+   });
+});
+
+
+
+
