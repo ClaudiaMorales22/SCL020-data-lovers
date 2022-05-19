@@ -50,7 +50,8 @@ ordenar.addEventListener("change", (e) => {
 // * Medallas *
 const medals = document.querySelector("#medals");
 medals.addEventListener("change", (e) => {
-  let premiados = filtroMedallas(femaleathletes, e)
+  let medalName = e.target.value;
+  let premiados = filtroMedallas(femaleathletes, medalName)
   renderAthlete(premiados);
   total.textContent = premiados.length;
 });
@@ -59,8 +60,9 @@ medals.addEventListener("change", (e) => {
 // * País *
 const team = document.querySelector("#team");
 team.addEventListener("change", (e) => {
-  let equipo = filtroTeam(femaleathletes, e)
-  renderAthlete(equipo);
+  let teamName = e.target.value; 
+  let equipo = filtroTeam(femaleathletes, teamName)
+    renderAthlete(equipo);
   total.textContent = equipo.length;
   
 });
@@ -69,7 +71,8 @@ team.addEventListener("change", (e) => {
 
 const sport = document.querySelector("#sport");
 sport.addEventListener("change", (e) => {
-  let deporte = filtroDeporte(femaleathletes, e)
+  let sportName = e.target.value; 
+  let deporte = filtroDeporte(femaleathletes, sportName)
   total.textContent = deporte.length;
   renderAthlete(deporte);
 });
@@ -110,7 +113,7 @@ const ultimateTeam = teamAthletes.filter((item,index)=>{
   })
 
   //ordenar team
-  let sortTeam = ultimateTeam.sort();
+  //let sortTeam = ultimateTeam.sort();
 
   //agregar teams al select
 
@@ -142,7 +145,7 @@ const ultimateSport = sportAthletes.filter((item,index)=>{
   })
 
   //ordenar sport
-  let sortSport = ultimateSport.sort();
+  //let sortSport = ultimateSport.sort();
 
   //agregar sport al select
 
@@ -168,3 +171,4 @@ document.getElementById("limpiar").addEventListener("click", function(){
   document.querySelector("#medals").value = ""
   document.querySelector("#sport").value = ""
 });
+
