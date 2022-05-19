@@ -1,33 +1,22 @@
 import data from "./data/athletes/athletes.js";
-import { getFemaleAthletes } from "./data.js";
+import { getFemaleAthletes, ordenadosAZ, ordenadosZA, filtroTeam, filtroMedallas, filtroDeporte } from "./data.js";
+
 
 let total = document.querySelector(".filter-button");
-const athletes = data.athletes;
+//const athletes = data.athletes;
 
-const femaleathletes = athletes.filter((person) => person.gender === "F");
+const femaleathletes = getFemaleAthletes(data);
 
-const femaleathletesContainer = document.querySelector("#allAthletes");
-total.textContent = femaleathletes.length;
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
-  
-  for (let i = 0; i < femaleathletes.length; i++) {
-    const athleteCard = document.createElement("div");
-    athleteCard.className = "athlete";
-    athleteCard.innerHTML += `
-              <img src="${"images/Niña.jpeg"}" alt="">
-                  <p>Nombre: ${femaleathletes[i].name}</p>
-                  <p>País: ${femaleathletes[i].team}</p>
-                  <p>Deporte: ${femaleathletes[i].sport}</p>
-                  <p>Medalla: ${femaleathletes[i].medal}</p>
-              `;
-    femaleathletesContainer.appendChild(athleteCard);
-  }
+  renderAthlete(femaleathletes)
+  total.textContent = femaleathletes.length;
 });
 
 
-// *** Búsqueda ***
-
+// * Búsqueda *
 const searchBar = document.querySelector("#searchBar");
 searchBar.addEventListener("keyup", (event) => {
   let textoBuscado = event.target.value.toLowerCase();
@@ -38,64 +27,49 @@ renderAthlete(matchedAthletes);
 total.textContent = matchedAthletes.length;
 });
 
-// *** Ordenar ***
 
-
+// * Ordenar *
 const ordenar = document.querySelector("#sort");
 ordenar.addEventListener("change", (e) => {
   let ordenados = [];
-  
-  if (e.target.value === "A-Z") {
-    ordenados = ordenadaAZ;
-    renderAthlete(ordenados);
-    console.log(ordenados.length);
+    if (e.target.value === "A-Z") {
+    ordenados = ordenadosAZ(femaleathletes);
+    
     total.textContent = ordenados.length;
+    renderAthlete(ordenados);
+    
+   
   } else if (e.target.value === "Z-A") {
-    ordenados = femaleathletes.sort((a, b) => b.name.localeCompare(a.name));
+    ordenados = ordenadosZA(femaleathletes);
     total.textContent = ordenados.length;
     renderAthlete(ordenados);
   }
 });
 
 
-// *** Medallas ***
-
+// * Medallas *
 const medals = document.querySelector("#medals");
 medals.addEventListener("change", (e) => {
-  let premiados = [];
-
-  if (e.target.value === "Gold") {
-    premiados = femaleathletes.filter((atleta) => atleta.medal === "Gold");
-    total.textContent = premiados.length;
-    renderAthlete(premiados);
-    
-  } else if (e.target.value === "Silver") {
-    premiados = femaleathletes.filter((atleta) => atleta.medal === "Silver");
-    total.textContent = premiados.length;
-    renderAthlete(premiados);
-
-  } else if (e.target.value === "Bronze") {
-    premiados = femaleathletes.filter((atleta) => atleta.medal === "Bronze");
-    total.textContent = premiados.length;
-    renderAthlete(premiados);
-  }
+  let premiados = filtroMedallas(femaleathletes, e)
+  renderAthlete(premiados);
+  total.textContent = premiados.length;
 });
+ 
 
-// *** País ***
-
+// * País *
 const team = document.querySelector("#team");
 team.addEventListener("change", (e) => {
-  let equipo = femaleathletes.filter((atleta) => atleta.team === "Argentina");
-  total.textContent = equipo.length;
+  let equipo = filtroTeam(femaleathletes, e)
   renderAthlete(equipo);
-
+  total.textContent = equipo.length;
+  
 });
 
-// *** Deporte ***
+// * Deporte *
 
 const sport = document.querySelector("#sport");
 sport.addEventListener("change", (e) => {
-  let deporte = femaleathletes.filter((atleta) => atleta.sport === "Volleyball");
+  let deporte = filtroDeporte(femaleathletes, e)
   total.textContent = deporte.length;
   renderAthlete(deporte);
 });
@@ -108,6 +82,7 @@ function renderAthlete(atletas) {
   atletas.forEach((atleta) => {
     const athleteCard = document.createElement("div");
     athleteCard.className = "athlete";
+    athleteCard.style.fontFamily = 'Arial'
     athleteCard.innerHTML += `
               <img src="${"images/Niña.jpeg"}" alt="">
               
@@ -123,17 +98,16 @@ function renderAthlete(atletas) {
 
 
 
-//select
+//select Países
 
 //team de atletas mujeres
 const teamAthletes = femaleathletes.map(({team})=>team);
-//console.log(teamAthletes);
+
 
 //elimina teams repetidos
 const ultimateTeam = teamAthletes.filter((item,index)=>{
   return teamAthletes.indexOf(item) === index;
   })
-  //console.log(ultimateTeam);
 
   //ordenar team
   let sortTeam = ultimateTeam.sort();
@@ -146,10 +120,51 @@ const ultimateTeam = teamAthletes.filter((item,index)=>{
   
   for(var i=0; i < team.length; i++){ 
       let option = document.createElement("option"); //Creamos la opcion
+      option.setAttribute('value', team[i])
       option.innerHTML = team[i]; //Metemos el texto en la opción
       select.appendChild(option); //Metemos la opción en el select
   }
 }
 loadTeam();
 
-//mostrar data filtrada por team
+
+
+
+//select Sports
+
+//team de atletas mujeres
+const sportAthletes = femaleathletes.map(({sport})=>sport);
+
+
+//elimina sport repetidos
+const ultimateSport = sportAthletes.filter((item,index)=>{
+  return sportAthletes.indexOf(item) === index;
+  })
+
+  //ordenar sport
+  let sortSport = ultimateSport.sort();
+
+  //agregar sport al select
+
+ function loadSport() {
+  let sport = ultimateSport; //Tu array de sport
+  let select = document.getElementById("sport"); //Seleccionamos el select
+  
+  for(var i=0; i < sport.length; i++){ 
+      let option = document.createElement("option"); //Creamos la opcion
+      option.setAttribute('value', sport[i])
+      option.innerHTML = sport[i]; //Metemos el texto en la opción
+      select.appendChild(option); //Metemos la opción en el select
+  }
+}
+loadSport();
+
+document.getElementById("limpiar").addEventListener("click", function(){ 
+      
+  renderAthlete(femaleathletes)
+  total.textContent = femaleathletes.length;
+  document.querySelector("#sort").value = "" 
+  document.querySelector("#team").value = ""
+  document.querySelector("#medals").value = ""
+  document.querySelector("#sport").value = ""
+});
