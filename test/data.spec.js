@@ -119,12 +119,11 @@ describe('Funcion filtroDeporte filtra las atletas de acuerdo al Deporte selecci
     expect(typeof filtroDeporte).toBe('function');
   });
 
-  it('Debería retornar las atletas del país seleccionado', () => {
+  it('Debería retornar las atletas del deporte seleccionado', () => {
     let athletasSport = filtroDeporte (data, "Taekwondo");
         expect(athletasSport[0].name).toBe('Patimat Abakarova');
    });
 });
-
 
 
 

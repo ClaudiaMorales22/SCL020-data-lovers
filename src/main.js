@@ -113,7 +113,7 @@ const ultimateTeam = teamAthletes.filter((item,index)=>{
   })
 
   //ordenar team
-  //let sortTeam = ultimateTeam.sort();
+  ultimateTeam.sort();
 
   //agregar teams al select
 
@@ -145,7 +145,7 @@ const ultimateSport = sportAthletes.filter((item,index)=>{
   })
 
   //ordenar sport
-  //let sortSport = ultimateSport.sort();
+ultimateSport.sort();
 
   //agregar sport al select
 
