@@ -31,6 +31,11 @@
 
       <div class="container filters">
 
+        <div>
+          <p class="p1">Nro. de Atletas:</p>
+          <button type="button" class="filter-button">Total:</button>
+        </div>
+
       <div>
         <select id="sort" class="filter">
           <option value="" selected disabled>Ordenar</option>
@@ -39,13 +44,9 @@
         </select>
       </div>
 
-        <select id="team" class="filter" name="team">
+        <select id="team" class="filter">
           <option value="" selected disabled>País</option>
-          <option value="Argentina">Argentina</option>
-          <option value="Chile">Chile</option>
-          <option value="Venezuela">Venezuela</option>
-          <option value="Brasil">Brasil</option>
-          <option value="Peru">Perú</option>
+         
         </select>
 
         <select id="medals" class="filter">
@@ -58,16 +59,11 @@
    
         <select id="sport" class="filter">
           <option value="" selected disabled>Deporte</option>
-          <option value="Volleyball">Volleyball</option>
-          <option value="">2</option>
-          <option value="">2</option>
-          <option value="">3</option>
-          <option value="">4</option>
+         
         </select>
 
         <div>
-          <p class="p1">Nro. de Atletas:</p>
-          <button type="button" class="filter-button">Total:</button>
+            <button type="button" id="limpiar" class="limpiar">Limpiar</button>
         </div>
         
       </div>
