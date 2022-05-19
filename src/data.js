@@ -1,9 +1,42 @@
-// estas funciones son de ejemplo
+//import data from "./data/athletes/athletes.js";
+export const getFemaleAthletes = (data) => {
+  const athletes = data.athletes;
+  const femaleathletes = athletes.filter((person) => person.gender === "F");
 
-export const example = () => {
-  return 'example';
+  return femaleathletes
 };
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+ 
+export const ordenadosAZ = (femaleathletes) => femaleathletes.sort((a, b) => a.name.localeCompare(b.name));
+
+export const ordenadosZA = (femaleathletes) => femaleathletes.sort((a, b) => b.name.localeCompare(a.name));
+
+
+export const filtroMedallas = (femaleathletes, e) => {
+
+  let premiados = [];
+
+  if (e.target.value === "Gold") {
+    premiados = femaleathletes.filter((atleta) => atleta.medal === "Gold");
+    
+  } else if (e.target.value === "Silver") {
+    premiados = femaleathletes.filter((atleta) => atleta.medal === "Silver");
+
+  } else if (e.target.value === "Bronze") {
+    premiados = femaleathletes.filter((atleta) => atleta.medal === "Bronze");
+  }
+
+  return premiados
+}
+
+export const filtroTeam = (femaleathletes, teamName) => {
+  return femaleathletes.filter((atleta) => atleta.team === teamName);
+}
+
+export const filtroDeporte = (femaleathletes, sportName) => {
+  return femaleathletes.filter((atleta) => atleta.sport === sportName);
+}
+
+
+
+
