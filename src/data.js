@@ -1,9 +1,11 @@
-export const getFemaleAthletes = (data) => {
-  const athletes = data.athletes;
-  const femaleathletes = athletes.filter((person) => person.gender === "F");
+import data from "./data/athletes/athletes.js";
 
-  return femaleathletes
-};
+export const athletes = data.athletes;
+
+export const getFemaleAthletes = (athletes) => {
+  const femaleathletes = athletes.filter((person) => person.gender === "F");
+  return femaleathletes;
+}
 
 export const ordenadosAZ = (femaleathletes) => femaleathletes.sort((a, b) => a.name.localeCompare(b.name));
 

@@ -1,10 +1,11 @@
-import data from "./data/athletes/athletes.js";
-import { getFemaleAthletes, ordenadosAZ, ordenadosZA, filtroTeam, filtroMedallas, filtroDeporte, clean, busqueda} from "./data.js";
+
+import { getFemaleAthletes, ordenadosAZ, ordenadosZA, filtroTeam, filtroMedallas, filtroDeporte, clean, busqueda, athletes} from "./data.js";
+
 
 let total = document.querySelector(".filter-button");
 //const athletes = data.athletes;
 
-const femaleathletes = getFemaleAthletes(data);
+const femaleathletes = getFemaleAthletes(athletes);
 
 document.addEventListener("DOMContentLoaded", () => {
   renderAthlete(femaleathletes)
@@ -93,6 +94,35 @@ function renderAthlete(atletas) {
     containerAthletes.appendChild(athleteCard);
   });
 }
+// const athleteCard = document.createElement("div");
+// athleteCard.addEventListener("click", () => { 
+//   renderAthleteDetails
+// });
+
+// function renderAthleteDetails(atletas) {
+//   const containerAthletes2 = document.querySelector('.headModal');
+//   containerAthletes2.innerHTML = "";
+//   atletas.forEach((atleta) => {
+//     const athleteCard2 = document.createElement("div");
+//     athleteCard2.className = "athlete";
+//     athleteCard2.style.fontFamily = 'Arial'
+//     athleteCard2.innerHTML += `
+//               <img src="${"images/Niña.jpeg"}" alt="">
+              
+//                   <p>Nombre: ${atleta.name}</p>
+//                   <p>País: ${atleta.team}</p>
+//                   <p>Deporte: ${atleta.sport}</p>
+//                   <p>Medalla: ${atleta.medal}</p>
+//                   <p>Edad: ${atleta.age}</p>
+//                   <p>Estatura: ${atleta.height}</p>
+//                   <p>Peso: ${atleta.weight}</p>
+//                   <p>Evento: ${atleta.event}</p>
+//                   <p>Noc: ${atleta.noc}</p>
+//           `;
+//     containerAthletes2.appendChild(athleteCard2);
+//   });
+// }
+
 
 //select Países
 

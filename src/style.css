@@ -7,9 +7,11 @@ body{
     background-image: url(images/gimnastaa2.jpeg);
     position: fixed;
     justify-content: center;
-    background-size: 1500px 690px;
+    background-size: 100%;
+    background-repeat: no-repeat;
     height: 300px;
     width: 100%;
+
 }
 
 .container {
@@ -229,4 +231,24 @@ a{
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
+  }
+
+  @media screen and (max-width: 480px){
+
+body{
+    background-image: url(images/gimnastaa2.jpeg);
+    background-size: 100%;
+    background-color: #46074d;
+}
+.athlete-container {
+   margin-left: 5em;
+   width: 210px;
+   min-height: 30px;
+
+}
+.header{
+    font-size: 16px;
+}
+
+
   }
