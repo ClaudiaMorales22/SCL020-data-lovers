@@ -1,5 +1,4 @@
-import{ordenadosAZ, ordenadosZA, filtroTeam, filtroDeporte} from '../src/data.js';
-
+import{ordenadosAZ, ordenadosZA, filtroTeam, filtroDeporte, filtroMedallas, busqueda, getFemaleAthletes} from '../src/data.js';
 const data = [
   {
     "name": "Giovanni Abagnale",
@@ -13,7 +12,6 @@ const data = [
     "event": "Rowing Men's Coxless Pairs",
     "medal": "Bronze"
   },
-  
     {
       "name": "Patimat Abakarova",
       "gender": "F",
@@ -26,7 +24,6 @@ const data = [
       "event": "Taekwondo Women's Flyweight",
       "medal": "Bronze"
     },
-  
     {
       "name": "Chantal Achterberg",
       "gender": "F",
@@ -125,5 +122,41 @@ describe('Funcion filtroDeporte filtra las atletas de acuerdo al Deporte selecci
    });
 });
 
+describe('Funcion filtroMedallas filtra las atletas de acuerdo a la medalla seleccionada', () => {
+  it('is a function', () => {
+    expect(typeof filtroMedallas).toBe('function');
+  });
+
+  it('Debería retornar las atletas de la medalla seleccionada', () => {
+    let athletasMedal = filtroMedallas (data, "Bronze");
+        expect(athletasMedal[0].name).toBe('Rachael Alexis Adams');
+   });
+});
+
+describe('Funcion busqueda filtra las atletas de acuerdo a la busqueda realizada por el usuario', () => {
+  it('is a function', () => {
+    expect(typeof busqueda).toBe('function');
+  });
+
+  it('Deberia filtrar las atletas de acuerdo a la busqueda realizada por el usuario', () => {
+    let athletasSearch = busqueda (data, "R");
+        expect(athletasSearch[0].name).toBe('Rachael Alexis Adams');
+   });
+});
+
+describe('Funcion femaleathletes deberia filtrar y devolvernos solo las atletas femeninas', () => {
+  it('is a function', () => {
+    expect(typeof getFemaleAthletes).toBe('function');
+  });
+
+  it('Deberia filtrar y devolvernos solo las atletas femeninas', () => {
+    let athleteFem = getFemaleAthletes (data, "F");
+    expect(athleteFem[3].name).toBe('Chantal Achterberg');
+    expect(athleteFem[2].name).toBe('Nicola Virginia Adams');
+    expect(athleteFem[1].name).toBe('Patimat Abakarova');
+    expect(athleteFem[0].name).toBe('Rachael Alexis Adams');
+  });
+});
 
 
+  
