@@ -47,14 +47,17 @@ Yo como tenista de 25 años que participará en las próximas olimpiadas quiero 
 
 
 
-- Usuaria Nro 3.
+ Usuario Nro 3.
 
-  Es una joven mujer de 21 años de edad que practica atletismo, pues su próxima meta es participar en las venideras olimpiadas, por lo que le interesa conocer datos tales como: país, nro de athletas y medallas obtenidas de las deportistas que pertenecen a la misma disciplina que ella practica.   
-
+  Es un hombre periodista de 45 años de edad que cubre las fuentes
+ de deporte de un canal de television, se encuentra preparando un reportaje acerca
+ de las olimpiadas de Rio 2016 y le gustaria obtener informacion de las atletas femeninas que participaron en esa edición, 
+por lo cual le interesa poder filtrar por país, medalla obtenida y también ordenar de la A-Z y de la Z-A para tener
+ más fácil acceso a nombres de competidoras.
   Criterios de aceptación:
-- Que pueda visualizar las atletas femeninas pertenecientes a las disciplina de atletismo.
-- Que escriba el nombre de la atleta que busca y le muestre el resultado.
-- Que  muestre el total de atletas de la disciplina de atletismo.
+- Que pueda filtrar por país.
+- Que pueda filtrar por medalla.
+- Que la data pueda ser ordenada por orden alfabético de la A-Z y de la Z-A.
 
 
 
