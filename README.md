@@ -37,12 +37,14 @@ Uso de HTML semántico, uso de selectores de CSS, modelo de caja (box model): bo
 
 - Usuaria Nro 2.
 
-  Es una joven mujer de 21 años de edad que practica atletismo, pues su próxima meta es participar en las venideras olimpiadas, por lo que le interesa conocer datos tales como: país, nro de athletas y medallas obtenidas de las deportistas que pertenecen a la misma disciplina que ella practica.   
+Yo como tenista de 25 años que participará en las próximas olimpiadas quiero filtrar la información por deportes para saber quiénes fueron medallistas en mi especialidad.
 
   Criterios de aceptación:
-- Que pueda visualizar las atletas femeninas pertenecientes a las disciplina de atletismo.
-- Que escriba el nombre de la atleta que busca y le muestre el resultado.
-- Que  muestre el total de atletas de la disciplina de atletismo.
+- Debe haber una opción para seleccionar medallistas por deporte.
+- Debe mostrar tarjeta con nombre, deporte, país y medalla.
+- Se debe mostrar cantidad de atletas por deporte.
+- Debe haber una barra de búsqueda por nombre de atletas.
+
 
 
 - Usuaria Nro 3.
