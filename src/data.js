@@ -37,4 +37,24 @@ export const clean = () => {
   return clean
 };
 
-
+export function renderAthlete(atletas) {
+  const containerAthletes = document.createElement("div");
+  
+  // document.querySelector("#allAthletes");
+  // containerAthletes.innerHTML = "";
+  atletas.forEach((atleta) => {
+    const athleteCard = document.createElement("div");
+    athleteCard.className = "athlete";
+    athleteCard.style.fontFamily = 'Arial'
+    athleteCard.innerHTML += `
+              <img src="${"images/Niña.jpeg"}" alt="">
+                  <p>Nombre: ${atleta.name}</p>
+                  <p>País: ${atleta.team}</p>
+                  <p>Deporte: ${atleta.sport}</p>
+                  <p>Medalla: ${atleta.medal}</p>
+              
+          `;
+    containerAthletes.appendChild(athleteCard);
+  });
+  return containerAthletes;
+}

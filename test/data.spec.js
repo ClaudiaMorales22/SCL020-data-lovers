@@ -1,4 +1,4 @@
-import{ordenadosAZ, ordenadosZA, filtroTeam, filtroDeporte, filtroMedallas, busqueda, getFemaleAthletes} from '../src/data.js';
+import{renderAthlete, ordenadosAZ, ordenadosZA, filtroTeam, filtroDeporte, filtroMedallas, busqueda, getFemaleAthletes} from '../src/data.js';
 const data = [
   {
     "name": "Giovanni Abagnale",
@@ -156,6 +156,18 @@ describe('Funcion femaleathletes deberia filtrar y devolvernos solo las atletas 
     expect(athleteFem[1].name).toBe('Patimat Abakarova');
     expect(athleteFem[0].name).toBe('Rachael Alexis Adams');
   });
+});
+
+
+describe('Funcion retorna elemento HTML ', () => {
+  it('is a function', () => {
+    expect(typeof renderAthlete).toBe('function');
+  });
+
+  it('Debería retornar los atletas filtrados', () => {
+    let container = renderAthlete(data)
+        expect(container instanceof HTMLElement).toBe(true);
+   });
 });
 
 
