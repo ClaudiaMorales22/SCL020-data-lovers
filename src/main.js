@@ -1,5 +1,5 @@
 
-import { getFemaleAthletes, ordenadosAZ, ordenadosZA, filtroTeam, filtroMedallas, filtroDeporte, clean, busqueda, athletes} from "./data.js";
+import { renderAthlete,  getFemaleAthletes, ordenadosAZ, ordenadosZA, filtroTeam, filtroMedallas, filtroDeporte, clean, busqueda, athletes} from "./data.js";
 
 
 let total = document.querySelector(".filter-button");
@@ -75,25 +75,30 @@ document.getElementById("limpiar").addEventListener("click", function(){
   total.textContent = femaleathletes.length;
 });
 
-function renderAthlete(atletas) {
-  const containerAthletes = document.querySelector("#allAthletes");
-  containerAthletes.innerHTML = "";
-  atletas.forEach((atleta) => {
-    const athleteCard = document.createElement("div");
-    athleteCard.className = "athlete";
-    athleteCard.style.fontFamily = 'Arial'
-    athleteCard.innerHTML += `
-              <img src="${"images/Niña.jpeg"}" alt="">
+
+// ***** Tarjetas ***** 
+
+// // // function renderAthlete(atletas) {
+// // //    = document.createElement("div");
+  
+const containerAthletes = document.querySelector("#allAthletes");
+const cards = renderAthlete (femaleathletes);
+//   // containerAthletes.innerHTML = "";
+//   atletas.forEach((atleta) => {
+//     const athleteCard = document.createElement("div");
+//     athleteCard.className = "athlete";
+//     athleteCard.style.fontFamily = 'Arial'
+//     athleteCard.innerHTML += `
+//               <img src="${"images/Niña.jpeg"}" alt="">
+//                   <p>Nombre: ${atleta.name}</p>
+//                   <p>País: ${atleta.team}</p>
+//                   <p>Deporte: ${atleta.sport}</p>
+//                   <p>Medalla: ${atleta.medal}</p>
               
-                  <p>Nombre: ${atleta.name}</p>
-                  <p>País: ${atleta.team}</p>
-                  <p>Deporte: ${atleta.sport}</p>
-                  <p>Medalla: ${atleta.medal}</p>
-              
-          `;
-    containerAthletes.appendChild(athleteCard);
-  });
-}
+//           `;
+  containerAthletes.appendChild(cards);
+
+// }
 // const athleteCard = document.createElement("div");
 // athleteCard.addEventListener("click", () => { 
 //   renderAthleteDetails
