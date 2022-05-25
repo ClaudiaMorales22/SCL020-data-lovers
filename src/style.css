@@ -137,6 +137,15 @@ background-color: lightgray;
    height: 450px;
    overflow: auto;
 }
+.containerAthlete{
+   width: 900px;
+   height: 450px;
+   display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+}
 
 .container {
     display: flex;

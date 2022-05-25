@@ -62,6 +62,20 @@ const data = [
     }
    ]
 
+   describe('Funcion femaleathletes deberia filtrar y devolvernos solo las atletas femeninas', () => {
+    it('is a function', () => {
+      expect(typeof getFemaleAthletes).toBe('function');
+    });
+  
+    it('Deberia filtrar y devolvernos solo las atletas femeninas', () => {
+      let athleteFem = getFemaleAthletes (data, "F");
+      expect(athleteFem[3].name).toBe('Chantal Achterberg');
+      expect(athleteFem[2].name).toBe('Nicola Virginia Adams');
+      expect(athleteFem[1].name).toBe('Patimat Abakarova');
+      expect(athleteFem[0].name).toBe('Rachael Alexis Adams');
+    });
+  });
+
    //test orden alfabetico A-Z
   describe('Funcion ordenadosAZ ordena alfabéticamente desde la A a la Z', () => {
   it('is a function', () => {
@@ -144,19 +158,7 @@ describe('Funcion busqueda filtra las atletas de acuerdo a la busqueda realizada
    });
 });
 
-describe('Funcion femaleathletes deberia filtrar y devolvernos solo las atletas femeninas', () => {
-  it('is a function', () => {
-    expect(typeof getFemaleAthletes).toBe('function');
-  });
 
-  it('Deberia filtrar y devolvernos solo las atletas femeninas', () => {
-    let athleteFem = getFemaleAthletes (data, "F");
-    expect(athleteFem[3].name).toBe('Chantal Achterberg');
-    expect(athleteFem[2].name).toBe('Nicola Virginia Adams');
-    expect(athleteFem[1].name).toBe('Patimat Abakarova');
-    expect(athleteFem[0].name).toBe('Rachael Alexis Adams');
-  });
-});
 
 
 describe('Funcion retorna elemento HTML ', () => {

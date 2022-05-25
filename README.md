@@ -65,30 +65,25 @@ por lo cual le interesa poder filtrar por país, medalla obtenida y también ord
 
 #### Prototipo de baja fidelidad
 
-Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
-solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
-iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
-`README.md`.
+Al inicio de nuestro proyecto, realizamos un prototipo de baja fidelidad a papel y lápiz 
+
+
+
 
 #### Prototipo de alta fidelidad
 
-Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
-_User Interface_). Para eso debes aprender a utilizar alguna herramienta de
-diseño visual. Nosotros te recomendamos [Figma](https://www.figma.com/) que es
-una herramienta que funciona en el navegador y, además, puedes crear una cuenta
-gratis. Sin embargo, eres libre de utilizar otros editores gráficos como
-Illustrator, Photoshop, PowerPoint, Keynote, etc.
-
-El diseño debe representar el _ideal_ de tu solución. Digamos que es lo que
-desearías implementar si tuvieras tiempo ilimitado para trabajar. Además, tu
-diseño debe seguir los fundamentos de _visual design_.
+Realizamos un prototipo de alta fidelidad en figma, y llevamos nuestro diseño a la pagina con la creacion 
+de HTML y le dimos estilo con CSS, pero no nos gustó el resultado obtenido y luego de feedbacks recibidos 
+por nuestras compañeras y coaches decidimos replantear nuestro diseño inicial, por lo cual acordamos realizar 
+un diseño por cada una de las integrantes del equipo como propuesta. De lo cual, tomamos de los diseños de cada una, lo que más nos gustó y lo llevamos a un diseño general que es el que tenemos como diseño final de nuestra página.
 
 #### Testeos de usabilidad
 
-Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
-en base a los resultados, deberás iterar tus diseños. Cuéntanos
-qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
+Luego de la creacíon de la página, tuvimos 3 pruebas de usabilidad con 3 usuarios distintos, 
+2 de ellos mujeres y 1 hombre. Para los usuarios la página resultó bastante amigable 
+visualmente y en su interfaz. Me comentaron que les fue fácil entender la temática de la página una vez habian
+ingresado a ella y los filtros funcionaron de manera muy intuitiva, por lo cual fue fácil para ellos
+acceder al contenido de su interés.
 
 ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
@@ -107,49 +102,20 @@ Como mínimo, tu implementación debe:
 
 ### Pruebas unitarias
 
-El _boilerplate_ de este proyecto no incluye Pruebas Unitarias (_tests_), así es
-que  tendrás que escribirlas tú para las funciones encargadas de  _procesar_,
-_filtrar_ y _ordenar_ la data, así como _calcular_ estadísticas.
+En la creación de los test de usuario se tomaron 5 atletas de la data general 
+para ser utilizada como data de prueba, para lo cual se tomó en consideración 
+que éstos  atletas tuvieran caracteristicas diferentes, como por ejemplo: Medallas, 
+Países, Deporte y Género.
+Se crearon las pruebas para las funciones;
+- Filtro por género (ésta funcion fue muy importante ya que a partir de ella creamos el array de atletas femeninas
+  que fue nuestra la data que trabajamos durante nuestro proyecto)
+- Ordenar de la A-Z (de manera ascendente)
+- Ordenar de la Z-A (de manera descendente)
+- Filtro por equipo.
+- Filtro por deporte. 
+- Filtro por Medalla.
+- Busqueda por nombre de atleta.
+- Crear tarjetas con información de las atletas desde la data. 
 
-Tus _pruebas unitarias_ deben dar una cobertura del 70% de _statements_
-(_sentencias_), _functions_ (_funciones_), _lines_ (_líneas_), y _branches_
-(_ramas_) del archivo `src/data.js` que contenga tus funciones y está detallado
-en la sección de [Consideraciones técnicas](#srcdatajs).
-
-## 6. Hacker edition
-
-Las secciones llamadas _Hacker Edition_ son **opcionales**. Si **terminaste**
-con todo lo anterior y te queda tiempo, intenta completarlas. Así podrás
-profundizar y/o ejercitar más sobre los objetivos de aprendizaje del proyecto.
-
-Features/características extra sugeridas:
-
-* En lugar de consumir la data estática brindada en este repositorio, puedes
-  consumir la data de forma dinámica, cargando un archivo JSON por medio de
-  `fetch`. La carpeta `src/data` contiene una versión `.js` y una `.json` de
-  de cada set datos.
-* Agregarle a tu interfaz de usuario implementada visualizaciones gráficas. Para
-  ello te recomendamos explorar librerías de gráficas como
-  [Chart.js](https://www.chartjs.org/)
-  o [Google Charts](https://developers.google.com/chart/).
-* 100% Coverage
-
-
-* [ ] Usa VanillaJS.
-* [ ] Pasa linter (`npm run pretest`)
-* [ ] Pasa tests (`npm test`)
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
-  lines y branches.
-* [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [ ] Incluye historias de usuario en `README.md`.
-* [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
-  `README.md`.
-* [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
-  en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
-* [ ] Incluye el listado de problemas que detectaste a través de tests de
-  usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
-* [ ] UI: Es _responsive_.
+Como resultado, obtuvimos el 100% de cobertura en nuestros tests. 
+ (foto)
