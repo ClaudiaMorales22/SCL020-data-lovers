@@ -25,7 +25,7 @@ Uso de HTML semántico, uso de selectores de CSS, modelo de caja (box model): bo
 
 ## Historias de usuario
 
-- Usuaria Nro 1.
+Usuaria Nro 1.
 
   Es una joven mujer de 21 años de edad que practica atletismo, pues su próxima meta es participar en las venideras olimpiadas, por lo que le interesa conocer datos tales como: país, nro de athletas y medallas obtenidas de las deportistas que pertenecen a la misma disciplina que ella practica.   
 
@@ -34,8 +34,7 @@ Uso de HTML semántico, uso de selectores de CSS, modelo de caja (box model): bo
 - Que escriba el nombre de la atleta que busca y le muestre el resultado.
 - Que  muestre el total de atletas de la disciplina de atletismo.
 
-
-- Usuaria Nro 2.
+Usuaria Nro 2.
 
 Yo como tenista de 25 años que participará en las próximas olimpiadas quiero filtrar la información por deportes para saber quiénes fueron medallistas en mi especialidad.
 
@@ -44,8 +43,6 @@ Yo como tenista de 25 años que participará en las próximas olimpiadas quiero 
 - Debe mostrar tarjeta con nombre, deporte, país y medalla.
 - Se debe mostrar cantidad de atletas por deporte.
 - Debe haber una barra de búsqueda por nombre de atletas.
-
-
 
  Usuario Nro 3.
 
@@ -58,16 +55,6 @@ por lo cual le interesa poder filtrar por país, medalla obtenida y también ord
 - Que pueda filtrar por país.
 - Que pueda filtrar por medalla.
 - Que la data pueda ser ordenada por orden alfabético de la A-Z y de la Z-A.
-
-
-
-### Diseño de la Interfaz de Usuario
-
-#### Prototipo de baja fidelidad
-
-Al inicio de nuestro proyecto, realizamos un prototipo de baja fidelidad a papel y lápiz 
-
-
 
 
 #### Prototipo de alta fidelidad
@@ -87,18 +74,47 @@ acceder al contenido de su interés.
 
 ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
-Luego de diseñar tu interfaz de usuario deberás trabajar en su implementación.
-**No** es necesario que construyas la interfaz exactamente como la diseñaste.
-Tu tiempo de hacking es escaso, así que deberás priorizar
+En nuestro proyecto se logró durante la implementación de usuarios:
 
-Como mínimo, tu implementación debe:
 
-1. Mostrar la data en una interfaz: puede ser un card, una tabla, una lista,
-   etc.
+1. Mostrar la data en una interfaz: Cards:
+
+![screen1](src/images/Pagina2Rio.jpg)
+
 2. Permitir al usuario interactuar para obtener la infomación que necesita.
-3. Ser _responsive_, es decir, debe visualizarse sin problemas desde distintos
-   tamaños de pantallas: móviles, tablets y desktops.
-4. Que la interfaz siga los fundamentos de _visual design_.
+
+Ejemplo: Búsqueda por País:
+
+![screen1](src/images/FiltroPais.jpg)
+
+Ejemplo: Búsqueda por Medalla:
+
+![screen1](src/images/FiltroMedalla.jpg)
+
+Ejemplo: Ordenar las tarjetas de forma ascendente:
+
+![screen1](src/images/Filtro%20A-Z.jpg)
+
+3. Interfaz responsive:
+
+  Se diseñaron 4 interfaces para 4 tipos de dispositivos:
+
+  Movil:
+
+![screen1](src/images/Movil2.jpeg)
+
+  Tablet:
+
+  ![screen1](src/images/Tablet2.jpeg)
+
+  Laptop:
+
+  ![screen1](src/images/Laptop2.jpeg)
+
+  Desktop:
+
+  ![screen1](src/images/Pagina2Rio.jpg)
+
 
 ### Pruebas unitarias
 
@@ -118,4 +134,4 @@ Se crearon las pruebas para las funciones;
 - Crear tarjetas con información de las atletas desde la data. 
 
 Como resultado, obtuvimos el 100% de cobertura en nuestros tests. 
- (foto)
+ ![screen1](src/images/Test.jpeg)
