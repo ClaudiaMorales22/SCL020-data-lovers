@@ -1,9 +1,8 @@
 
-import { renderAthlete,  getFemaleAthletes, ordenadosAZ, ordenadosZA, filtroTeam, filtroMedallas, filtroDeporte, busqueda, athletes} from "./data.js";
+import { getFemaleAthletes, ordenadosAZ, ordenadosZA, filtroTeam, filtroMedallas, filtroDeporte, busqueda, athletes} from "./data.js";
 
 
 let total = document.querySelector(".filter-button");
-//const athletes = data.athletes;
 
 const femaleathletes = getFemaleAthletes(athletes);
 
@@ -83,11 +82,27 @@ document.getElementById("limpiar").addEventListener("click", function(){
   return clean
 };
 
-// ***** Tarjetas ***** 
-  
-const containerAthletes = document.querySelector("#allAthletes");
-const cards = renderAthlete (femaleathletes);
-containerAthletes.appendChild(cards);
+
+function renderAthlete(atletas) {
+  const containerAthletes = document.querySelector("#allAthletes");
+  containerAthletes.innerHTML = "";
+  atletas.forEach((atleta) => {
+    const athleteCard = document.createElement("div");
+    athleteCard.className = "athlete";
+    athleteCard.style.fontFamily = 'Arial'
+    athleteCard.innerHTML += `
+              <img src="${"images/Niña.jpeg"}" alt="">
+              
+                  <p>Nombre: ${atleta.name}</p>
+                  <p>País: ${atleta.team}</p>
+                  <p>Deporte: ${atleta.sport}</p>
+                  <p>Medalla: ${atleta.medal}</p>
+              
+          `;
+    containerAthletes.appendChild(athleteCard);
+  });
+}
+
 
 //select Países
 

@@ -29,21 +29,3 @@ export const filtroDeporte = (femaleathletes, sportName) => {
   return femaleathletes.filter((atleta) => atleta.sport === sportName);
 }
 
-export function renderAthlete(atletas) {
-  const containerAthletes = document.createElement("div");
-  containerAthletes. className = "containerAthlete"
-  atletas.forEach((atleta) => {
-    const athleteCard = document.createElement("div");
-    athleteCard.className = "athlete";
-    athleteCard.innerHTML += `
-              <img src="${"images/Niña.jpeg"}" alt="">
-                  <p>Nombre: ${atleta.name}</p>
-                  <p>País: ${atleta.team}</p>
-                  <p>Deporte: ${atleta.sport}</p>
-                  <p>Medalla: ${atleta.medal}</p>
-              
-          `;
-    containerAthletes.appendChild(athleteCard);
-  });
-  return containerAthletes;
-}
