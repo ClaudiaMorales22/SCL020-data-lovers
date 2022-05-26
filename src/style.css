@@ -23,7 +23,7 @@ body{
 
 header {
     background-color: #46074d;
-    height: 50px;
+    min-height: 50px;
     display: flex;
     justify-content: space-between;
 }
@@ -56,18 +56,6 @@ header {
     border-radius: 8px;
     width: 400px;
     margin-left: 10cm;
-}
-
-.search-button {
-    margin-left: 2px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.search-button img {
-    width: 100%;
-    max-width: 40px;
 }
 
 .filter-container {
@@ -137,6 +125,15 @@ background-color: lightgray;
    height: 450px;
    overflow: auto;
 }
+/* .containerAthlete{
+   width: 900px;
+   height: 450px;
+   display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+} */
 
 .container {
     display: flex;
@@ -185,23 +182,27 @@ a{
   a:hover{
     font-size: 22px;
     transition-delay: 0.05s;
-  }
-  #presentacion{
+}
+#presentacion{
     border-radius: 15px;
     margin-left: 10em;
     width: 480px;
     height: 270px;
     margin-left: 32em;
     margin-top: 8em;
-    }
+}
 
-    #arosolimpicos{
+#arosolimpicos{
     max-width: 100px;
     position: absolute;
     top:0cm;
     left:31cm;
 
-    }
+}
+
+#arosolimpicosM{
+    display: none;
+}
 
 #lBlanco{
     width: 120px;
@@ -211,14 +212,7 @@ a{
     }
 
 #volver{
-    padding: 7px;
-    background-color: #bbd0ff;
-    color: black;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 18px;
-    border-radius: 4px;
-    text-decoration: none;
-    position:absolute;
+
     top: 16cm;
     left: 4cm;
 }
@@ -241,14 +235,214 @@ body{
     background-color: #46074d;
 }
 .athlete-container {
-   margin-left: 5em;
-   width: 210px;
+margin-top: 1em;
+   margin-left: 1em;
+   width: 340px;
    min-height: 30px;
 
 }
-.header{
-    font-size: 16px;
+h1{
+    display: none;
+    
 }
 
+#lBlanco{
+min-width: 120px;
+position: absolute;
+left:120px;
+}
 
+#arosolimpicosM{
+    display: block;
+    width: 180px;
+    position: absolute;
+    left: 100px;
+    top: 200px;
+}
+
+#presentacion{
+width: 350px;
+height: 230px;
+margin-left: 13px;
+margin-top: 270px;
+}
+a{
+    position:absolute;
+    top: 16cm;
+    left: 4cm;
   }
+  .search-input {
+    width: 210px;
+    margin-left: 0.3cm;
+}
+
+.filter-container {
+    /* margin-top: 15px;
+    margin-bottom: 15px; */
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: start;
+    margin-left: 0.3cm;
+
+}
+
+.filter {
+    font-size: 15px;
+    padding: 3px 5px;
+    width: 100%;
+    min-height: 30px;
+    max-width: 120px;
+    margin: 5px;
+}
+
+.athlete {
+   
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 9px;
+    padding: 10px;
+    padding-left: 10px;
+    width: 100px;
+    margin: 1px;
+    text-align: left;
+    height: 130px;
+}
+.athlete img {
+    width: 50%;
+    max-width: 25px;
+}
+
+#volver{
+    top: 19.4cm;
+    left: 3.9cm;
+    font-size: 15px;
+}
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 960px){
+
+    body{
+        background-size: 770px 330px;
+        background-color: #46074d;
+    }
+    .athlete-container {
+    margin-top: 15em;
+       margin-left: 3.5em;
+       width: 650px;
+       min-height: 80px;
+    
+    }
+    h1{
+        display: none;
+        
+    }
+    
+    #lBlanco{
+    min-width: 160px;
+    position: absolute;
+    left: 300px;
+    }
+    
+    #arosolimpicosM{
+        display: block;
+        width: 180px;
+        position: absolute;
+        left: 280px;
+        top: 280px;
+    }
+    
+    #presentacion{
+    width: 480px;
+    height: 310px;
+    margin-left: 140px;
+    margin-top: 400px;
+    }
+    a{
+        position:absolute;
+        top: 22cm;
+        left: 9cm;
+        font-size: 25px;
+      }
+      .search-input {
+        width: 270px;
+        margin-left: 0.3cm;
+        margin-top:2cm ;
+    }
+    
+    .filter-container {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 160px;
+        padding-bottom: 0;
+        display: flex;
+        justify-content: start;
+        margin-left: 2.5cm;
+    position: absolute;
+    top: 2.9cm;
+    }
+    
+    .filter {
+        font-size: 16px;
+        padding: 5px;
+        width: 100%;
+        min-height: 30px;
+        max-width: 90px;
+        margin: 7px;
+    }
+    
+    .athlete {
+       
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 13px;
+        padding: 10px;
+        padding-left: 10px;
+        width: 200px;
+        margin: 5px;
+        text-align: left;
+        height: 130px;
+    }
+    .athlete img {
+        width: 50%;
+        max-width: 25px;
+    }
+    
+    #volver{
+        top: 24cm;
+        left: 8.3cm;
+        font-size: 20px;
+    }
+    
+    }
+
+    @media screen and (min-width: 961px) and (max-width: 1328px){
+        
+
+        body{
+            background-size: 100%;
+            background-color: #46074d;
+        }
+
+
+        #lBlanco{
+            position: absolute;
+            left: 1cm;
+        }
+        
+        #arosolimpicos{
+            max-width: 100px;
+            position: absolute;
+            top:0cm;
+            left:30cm;
+        
+        }
+
+        .athlete-container{
+            margin-left: 11cm;
+            width: 800px;
+            height: 450px;
+        }
+
+        }

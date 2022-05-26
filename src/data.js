@@ -19,7 +19,7 @@ export const filtroMedallas = (femaleathletes, medalName) => {
 export const busqueda = (femaleathletes, textoBuscado) => {
   const search = femaleathletes.filter(el => el.name.toLowerCase().includes(textoBuscado.toLowerCase()));
   return search;
-};
+}
 
 export const filtroTeam = (femaleathletes, teamName) => {
   return femaleathletes.filter((atleta) => atleta.team === teamName);
@@ -28,13 +28,4 @@ export const filtroTeam = (femaleathletes, teamName) => {
 export const filtroDeporte = (femaleathletes, sportName) => {
   return femaleathletes.filter((atleta) => atleta.sport === sportName);
 }
-
-export const clean = () => {
-  document.querySelector("#sort").value = "" 
-  document.querySelector("#team").value = ""
-  document.querySelector("#medals").value = ""
-  document.querySelector("#sport").value = ""
-  return clean
-};
-
 
